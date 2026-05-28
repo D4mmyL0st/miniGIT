@@ -58,3 +58,37 @@ void print_files(Commit* commit) {
         cur = cur->next;
     }
 }
+
+   new_commit->parent = current;
+
+    // копируем все файлы
+    FileNode* copied = copy_files(current->files);
+
+    // удаляем нужный файл из копии
+    FileNode* prev = NULL;
+    FileNode* cur = copied;
+
+    while (cur) {
+        if (strcmp(cur->path, path) == 0) {
+            if (prev == NULL) {
+                copied = cur->next;
+            } else {
+                prev->next = cur->next;
+            }
+
+            free(cur->data->content);
+            free(cur->data);
+            free(cur->path);
+            free(cur);
+
+            break;
+        }
+
+        prev = cur;
+        cur = cur->next;
+    }
+
+    new_commit->files = copied;
+
+    return new_commit;
+}
