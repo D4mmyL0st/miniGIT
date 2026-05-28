@@ -8,7 +8,7 @@ typedef struct FileContent {
 typedef struct FileNode {
 	char* path;
 	FileContent* data;
-	struct FileContent* next;
+	struct FileNode* next;
 }FileNode;
 
 typedef struct Commit{

@@ -3,7 +3,7 @@
 #include "../headers/repo.h"
 
 Commit* init_repo(){
-	Commit* c = malloc(sizeof(Сommit));
+	Commit* c = malloc(sizeof(Commit));
 
 	c -> message = strdup("inital commit");
 	c -> parent = NULL;
