@@ -10,7 +10,7 @@ int main() {
     printf("%s\n", get_file_content(v2, "a.txt"));
     printf("%s\n", get_file_content(v2, "b.txt"));
     printf("v2 created\n");
-    
+    print_files(v2);    
     return 0;
 }
 

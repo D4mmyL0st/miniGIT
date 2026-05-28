@@ -46,3 +46,15 @@ const char* get_file_content(Commit* commit, const char* path) {
 
     return NULL;
 }
+void print_files(Commit* commit) {
+    if (!commit) return;
+
+    FileNode* cur = commit->files;
+
+    printf("Files in commit:\n");
+
+    while (cur) {
+        printf("- %s: %s\n", cur->path, cur->data->content);
+        cur = cur->next;
+    }
+}

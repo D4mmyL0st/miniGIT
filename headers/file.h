@@ -4,5 +4,5 @@
 #include "repo.h"
 const char* get_file_content(Commit* commit, const char* path);
 Commit* add_file(Commit* current, const char* path, const char* content);
-
+void print_files(Commit* commit);
 #endif
